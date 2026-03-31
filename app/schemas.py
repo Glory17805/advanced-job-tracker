@@ -18,3 +18,11 @@ class UserResponse(BaseModel):
 
     class Config:
         from_attributes = True
+class JobCreate(BaseModel):
+    title: str
+    description: str
+    location: str
+    skills: str
+
+class ApplyJob(BaseModel):
+    resume_link: str
