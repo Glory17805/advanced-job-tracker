@@ -4,6 +4,7 @@ from sqlalchemy.orm import Session
 from app.database import engine, Base, SessionLocal
 from app.routers import user
 from app import models, schemas
+from app.routers import jobs, applications
 
 # Create FastAPI app
 app = FastAPI(title="Advanced Job Tracker API")
