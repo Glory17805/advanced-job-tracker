@@ -26,6 +26,22 @@ app.include_router(user.router)
 @app.get("/")
 def home():
     return {"message": "FastAPI Job Tracker Running Successfully"}
+from fastapi import FastAPI
+from app.database import Base, engine
+from app.routes import jobs, applications
+
+app = FastAPI()
+
+# Create tables
+Base.metadata.create_all(bind=engine)
+
+# Include routes
+app.include_router(jobs.router)
+app.include_router(applications.router)
+
+@app.get("/")
+def home():
+    return {"message": "Job Portal Backend Running"}
 
 
 # =========================
