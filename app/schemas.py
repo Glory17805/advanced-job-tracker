@@ -1,4 +1,12 @@
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr,  HttpUrl
+
+class ResumeCreate(BaseModel):
+    user_id: int
+    resume_link: HttpUrl   # ✅ ensures valid URL
+
+class ResumeCreate(BaseModel):
+    user_id: int
+    resume_link: str
 
 class UserCreate(BaseModel):
     name: str
