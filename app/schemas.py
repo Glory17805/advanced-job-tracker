@@ -18,6 +18,15 @@ class UserLogin(BaseModel):
     email: EmailStr
     password: str
 
+class JobCreate(BaseModel):
+    title: str
+    description: str
+    location: str
+    skills: str
+
+class ApplyJob(BaseModel):
+    resume_link: str
+
 class UserResponse(BaseModel):
     id: int
     name: str
